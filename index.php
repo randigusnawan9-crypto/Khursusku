@@ -1,4 +1,4 @@
-```php
+
 <?php
 
 $namaWebsite = "randi-kursusku";
@@ -596,4 +596,3 @@ $kursus = [
 </body>
 
 </html>
-```
