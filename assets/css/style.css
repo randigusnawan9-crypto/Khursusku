@@ -1,0 +1,767 @@
+/* ==============================
+   KURSUSKU - FORM PENDAFTARAN
+============================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+
+    /* Background gradasi */
+    background: linear-gradient(
+        135deg,
+        #dbeafe,
+        #eff6ff,
+        #e0f2fe
+    );
+
+    color: #1e293b;
+
+    min-height: 100vh;
+}
+
+
+/* ==============================
+   CONTAINER
+============================== */
+
+.container {
+    width: min(1000px, 92%);
+    margin: auto;
+}
+
+
+/* ==============================
+   HEADER / NAVIGASI
+============================== */
+
+.site-header {
+    background: linear-gradient(
+        90deg,
+        #2563eb,
+        #1d4ed8
+    );
+
+    color: white;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.nav-wrap {
+    min-height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+/* Logo */
+
+.brand {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 24px;
+
+    font-weight: bold;
+}
+
+
+/* Menu */
+
+nav {
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+
+    text-decoration: none;
+
+    padding: 9px 15px;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.2);
+
+    transform: translateY(-2px);
+}
+
+
+/* ==============================
+   JUDUL
+============================== */
+
+.page-intro {
+    text-align: center;
+
+    padding: 45px 20px 25px;
+}
+
+.eyebrow {
+    display: inline-block;
+
+    background: #dbeafe;
+
+    color: #2563eb;
+
+    padding: 7px 15px;
+
+    border-radius: 20px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+.page-intro h1 {
+    margin: 15px 0 10px;
+
+    color: #1e3a8a;
+
+    font-size: 36px;
+}
+
+.page-intro p {
+    color: #64748b;
+
+    font-size: 17px;
+}
+
+
+/* ==============================
+   FORM CARD
+============================== */
+
+.form-card {
+    max-width: 800px;
+
+    margin: 20px auto 50px;
+
+    padding: 35px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px rgba(37, 99, 235, 0.15);
+
+    border: 1px solid #dbeafe;
+}
+
+
+/* ==============================
+   GRID
+============================== */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+
+/* ==============================
+   FORM GROUP
+============================== */
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+
+/* Label */
+
+label,
+legend {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-weight: bold;
+
+    color: #1e3a8a;
+}
+
+
+/* ==============================
+   INPUT
+============================== */
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 2px solid #dbeafe;
+
+    border-radius: 10px;
+
+    background: #f8fafc;
+
+    color: #1e293b;
+
+    font-size: 15px;
+
+    transition: 0.3s;
+}
+
+
+/* Saat input diklik */
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+
+    border-color: #2563eb;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+
+/* Placeholder */
+
+input::placeholder,
+textarea::placeholder {
+    color: #94a3b8;
+}
+
+
+/* ==============================
+   RADIO & CHECKBOX
+============================== */
+
+fieldset {
+    border: none;
+
+    padding: 0;
+
+    margin: 0 0 22px;
+}
+
+.choice {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-right: 20px;
+
+    padding: 9px 14px;
+
+    background: #eff6ff;
+
+    border: 1px solid #bfdbfe;
+
+    border-radius: 8px;
+
+    color: #334155;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.choice:hover {
+    background: #dbeafe;
+
+    border-color: #60a5fa;
+}
+
+.choice input {
+    accent-color: #2563eb;
+}
+
+
+/* ==============================
+   TEXTAREA
+============================== */
+
+textarea {
+    resize: vertical;
+
+    min-height: 120px;
+}
+
+
+/* ==============================
+   HELP TEXT
+============================== */
+
+.help {
+    display: block;
+
+    margin-top: 6px;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+
+/* ==============================
+   BUTTON
+============================== */
+
+.btn-primary {
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        90deg,
+        #2563eb,
+        #1d4ed8
+    );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 15px rgba(37, 99, 235, 0.3);
+
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(
+        90deg,
+        #1d4ed8,
+        #1e40af
+    );
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(37, 99, 235, 0.4);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+
+/* ==============================
+   MOBILE
+============================== */
+
+@media (max-width: 700px) {
+
+    .nav-wrap {
+        flex-direction: column;
+
+        padding: 15px 0;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .page-intro h1 {
+        font-size: 28px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-card {
+        padding: 22px;
+
+        margin-bottom: 30px;
+    }
+
+    .choice {
+        display: flex;
+
+        margin-right: 0;
+
+        margin-bottom: 8px;
+    }
+}
+/* =========================================
+   HALAMAN HASIL REGISTRASI
+========================================= */
+
+.result-page {
+    padding-top: 45px;
+    padding-bottom: 60px;
+}
+
+
+/* =========================================
+   PESAN BERHASIL
+========================================= */
+
+.alert-success {
+    max-width: 800px;
+
+    margin: 0 auto 25px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    background: white;
+
+    border-radius: 18px;
+
+    border: 1px solid #bfdbfe;
+
+    box-shadow:
+        0 8px 25px rgba(37, 99, 235, 0.12);
+}
+
+
+.success-icon {
+    width: 65px;
+
+    height: 65px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 35px;
+
+    font-weight: bold;
+}
+
+
+.alert-success h1 {
+    margin: 0 0 10px;
+
+    color: #1e3a8a;
+
+    font-size: 30px;
+}
+
+
+.alert-success p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 16px;
+}
+
+
+/* =========================================
+   KARTU RINGKASAN
+========================================= */
+
+.summary-card {
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    padding: 30px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    border: 1px solid #dbeafe;
+
+    box-shadow:
+        0 10px 30px rgba(37, 99, 235, 0.15);
+}
+
+
+/* =========================================
+   JUDUL RINGKASAN
+========================================= */
+
+.summary-header {
+    margin-bottom: 25px;
+
+    padding-bottom: 18px;
+
+    border-bottom: 2px solid #dbeafe;
+}
+
+
+.summary-header h2 {
+    margin: 0 0 8px;
+
+    color: #1e3a8a;
+
+    font-size: 23px;
+}
+
+
+.summary-header p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   DAFTAR DATA
+========================================= */
+
+.summary-list {
+    margin: 0;
+
+    padding: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+.summary-item {
+    display: grid;
+
+    grid-template-columns: 180px 1fr;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 14px 16px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 10px;
+
+    transition: 0.2s;
+}
+
+
+.summary-item:hover {
+    background: #eff6ff;
+
+    border-color: #bfdbfe;
+}
+
+
+.summary-item dt {
+    font-weight: bold;
+
+    color: #1e3a8a;
+}
+
+
+.summary-item dd {
+    margin: 0;
+
+    color: #334155;
+
+    font-weight: 500;
+
+    word-break: break-word;
+}
+
+
+/* =========================================
+   TOMBOL
+========================================= */
+
+.result-actions {
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+
+.btn-link,
+.btn-secondary {
+    flex: 1;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 48px;
+
+    padding: 12px 20px;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+
+.btn-link {
+    background: linear-gradient(
+        90deg,
+        #2563eb,
+        #1d4ed8
+    );
+
+    color: white;
+
+    box-shadow:
+        0 5px 15px rgba(37, 99, 235, 0.25);
+}
+
+
+.btn-link:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(37, 99, 235, 0.35);
+}
+
+
+.btn-secondary {
+    background: #eff6ff;
+
+    color: #1d4ed8;
+
+    border: 1px solid #bfdbfe;
+}
+
+
+.btn-secondary:hover {
+    background: #dbeafe;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.site-footer {
+    padding: 25px 20px;
+
+    text-align: center;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+    border-top: 1px solid #dbeafe;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .result-page {
+        padding-top: 25px;
+
+        padding-bottom: 30px;
+    }
+
+
+    .alert-success {
+        padding: 25px 20px;
+    }
+
+
+    .alert-success h1 {
+        font-size: 25px;
+    }
+
+
+    .summary-card {
+        padding: 20px;
+    }
+
+
+    .summary-item {
+        grid-template-columns: 1fr;
+
+        gap: 5px;
+
+        align-items: start;
+    }
+
+
+    .result-actions {
+        flex-direction: column;
+    }
+
+
+    .btn-link,
+    .btn-secondary {
+        width: 100%;
+    }
+
+}
+@media screen and (max-width: 700px) {
+
+    body {
+        background: rgb(0, 132, 255) !important;
+    }
+
+}

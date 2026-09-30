@@ -1,4 +1,4 @@
-
+`
 <?php
 
 $namaWebsite = "randi-kursusku";
@@ -443,28 +443,35 @@ $kursus = [
 
     <div class="menu-buttons">
 
-        <a
-            href="fee-calculator.php"
-            class="menu-button"
-        >
-            🧮 Kalkulator Biaya
-        </a>
+    <a
+        href="fee-calculator.php"
+        class="menu-button"
+    >
+        🧮 Kalkulator Biaya
+    </a>
 
-        <a
-            href="server-time.php"
-            class="menu-button"
-        >
-            🖥️ Server Time
-        </a>
+    <a
+        href="server-time.php"
+        class="menu-button"
+    >
+        🖥️ Server Time
+    </a>
 
-        <a
-            href="test-functions.php"
-            class="menu-button"
-        >
-            🔧 Fungsi PHP
-        </a>
+    <a
+        href="test-functions.php"
+        class="menu-button"
+    >
+        🔧 Fungsi PHP
+    </a>
 
-    </div>
+    <a
+        href="registration.php"
+        class="menu-button"
+    >
+        📝 Registrasi Kursus
+    </a>
+
+</div>
 
 </section>
 

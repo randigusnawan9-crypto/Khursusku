@@ -1,0 +1,50 @@
+PERBANDINGAN LOCALHOST DAN HOSTING/PRODUCTION
+
+1. Lingkungan
+Localhost:
+Aplikasi dijalankan pada komputer sendiri menggunakan Laragon.
+
+Hosting/Production:
+Aplikasi dijalankan pada server yang dapat diakses melalui jaringan/internet.
+
+2. Akses
+Localhost:
+Akses menggunakan alamat seperti http://localhost/randi-kursusku/
+
+Hosting/Production:
+Aplikasi diakses menggunakan domain atau alamat server.
+
+3. Server
+Localhost:
+Web server dan PHP berjalan pada komputer sendiri.
+
+Hosting/Production:
+Web server dan PHP berjalan pada server hosting.
+
+4. HTTPS
+Localhost:
+Pada latihan lokal HTTPS tidak selalu digunakan.
+
+Hosting/Production:
+HTTPS diperlukan untuk melindungi komunikasi data antara browser dan server.
+
+5. Debug
+Localhost:
+Proses debugging lebih mudah dilakukan karena aplikasi berjalan di lingkungan pengembangan sendiri.
+
+Hosting/Production:
+Konfigurasi debug harus lebih hati-hati agar informasi sensitif tidak ditampilkan kepada pengguna.
+
+6. Secret
+Localhost:
+Data konfigurasi latihan dapat berada pada lingkungan pengembangan.
+
+Hosting/Production:
+Secret seperti password dan API key harus dijaga dan tidak diletakkan sembarangan pada source code publik.
+
+7. Document Root
+Localhost:
+Project ditempatkan pada document root Laragon agar dapat diakses melalui localhost.
+
+Hosting/Production:
+File aplikasi ditempatkan pada document root yang dikonfigurasi oleh server hosting.
