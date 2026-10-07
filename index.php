@@ -1,4 +1,3 @@
-`
 <?php
 
 $namaWebsite = "randi-kursusku";
@@ -71,7 +70,9 @@ $kursus = [
             color: #222;
         }
 
-        /* HEADER */
+        /* =========================
+           HEADER
+        ========================== */
 
         header {
             background: #2563eb;
@@ -83,7 +84,9 @@ $kursus = [
             margin: 0;
         }
 
-        /* HERO */
+        /* =========================
+           HERO
+        ========================== */
 
         .hero {
             padding: 50px 8%;
@@ -93,8 +96,10 @@ $kursus = [
         .hero-content {
             max-width: 1200px;
             margin: auto;
+
             display: grid;
             grid-template-columns: 1fr 1fr;
+
             gap: 40px;
             align-items: center;
         }
@@ -112,17 +117,26 @@ $kursus = [
         .hero-image img {
             width: 100%;
             height: 320px;
+
             object-fit: cover;
+
             border-radius: 15px;
+
             display: block;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+
+            box-shadow:
+                0 8px 20px rgba(0, 0, 0, 0.12);
         }
 
-        /* TOMBOL MENU */
+        /* =========================
+           MENU FITUR
+        ========================== */
 
         .menu-section {
             padding: 40px 8%;
+
             background: white;
+
             text-align: center;
         }
 
@@ -138,61 +152,195 @@ $kursus = [
 
         .menu-buttons {
             display: flex;
+
             justify-content: center;
+
             gap: 15px;
+
             flex-wrap: wrap;
         }
 
         .menu-button {
             display: inline-block;
+
             padding: 13px 22px;
+
             background: #2563eb;
+
             color: white;
+
             text-decoration: none;
+
             border-radius: 8px;
+
             font-weight: bold;
+
             transition: 0.3s;
         }
 
         .menu-button:hover {
             background: #1d4ed8;
+
             transform: translateY(-2px);
         }
 
-        /* VIDEO */
+        /* =========================
+           BRANCHING, LOOPING,
+           DAN FORM LANJUTAN
+        ========================== */
+
+        .week6-section {
+            padding: 45px 8%;
+
+            background: linear-gradient(
+                135deg,
+                #eff6ff,
+                #dbeafe
+            );
+
+            text-align: center;
+        }
+
+        .week6-box {
+            max-width: 1100px;
+
+            margin: auto;
+
+            background: white;
+
+            padding: 35px;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.08);
+
+            border: 1px solid #bfdbfe;
+        }
+
+        .week6-box h2 {
+            color: #2563eb;
+
+            margin-top: 0;
+
+            margin-bottom: 10px;
+
+            font-size: 28px;
+        }
+
+        .week6-box p {
+            color: #555;
+
+            line-height: 1.6;
+
+            margin-bottom: 25px;
+        }
+
+        .week6-buttons {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+
+            gap: 15px;
+        }
+
+        .week6-button {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            min-height: 60px;
+
+            padding: 15px;
+
+            background: #2563eb;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 10px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+
+            box-shadow:
+                0 5px 12px rgba(
+                    37,
+                    99,
+                    235,
+                    0.18
+                );
+        }
+
+        .week6-button:hover {
+            background: #1d4ed8;
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 8px 18px rgba(
+                    37,
+                    99,
+                    235,
+                    0.25
+                );
+        }
+
+        /* =========================
+           VIDEO
+        ========================== */
 
         .media-section {
             padding: 50px 8%;
+
             text-align: center;
+
             background: #f8fafc;
         }
 
         .media-section h2 {
             color: #2563eb;
+
             margin-bottom: 10px;
         }
 
         .media-section p {
             color: #555;
+
             margin-bottom: 25px;
         }
 
         .video-container {
             max-width: 800px;
+
             margin: auto;
+
             background: #111827;
+
             padding: 10px;
+
             border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.15);
         }
 
         .video-container video {
             width: 100%;
+
             display: block;
+
             border-radius: 10px;
         }
 
-        /* KATALOG */
+        /* =========================
+           KATALOG
+        ========================== */
 
         .container {
             padding: 40px 8%;
@@ -204,30 +352,48 @@ $kursus = [
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(
-                auto-fit,
-                minmax(230px, 1fr)
-            );
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(230px, 1fr)
+                );
+
             gap: 20px;
         }
 
-        /* CARD */
+        /* =========================
+           CARD
+        ========================== */
 
         .card {
             background: white;
+
             padding: 20px;
+
             border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+
+            box-shadow:
+                0 5px 15px rgba(0, 0, 0, 0.08);
+
             transition: 0.3s;
         }
 
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+
+            box-shadow:
+                0 8px 20px rgba(
+                    0,
+                    0,
+                    0,
+                    0.12
+                );
         }
 
         .card h3 {
             margin-top: 15px;
+
             min-height: 45px;
         }
 
@@ -235,105 +401,155 @@ $kursus = [
             line-height: 1.5;
         }
 
-        /* STATUS */
+        /* =========================
+           STATUS
+        ========================== */
 
         .status {
             display: inline-block;
+
             padding: 6px 10px;
+
             border-radius: 20px;
+
             font-size: 13px;
+
             font-weight: bold;
         }
 
         .tersedia {
             background: #dcfce7;
+
             color: #166534;
         }
 
         .penuh {
             background: #fee2e2;
+
             color: #991b1b;
         }
 
-        /* HARGA */
+        /* =========================
+           HARGA
+        ========================== */
 
         .harga {
             color: #2563eb;
+
             font-size: 20px;
+
             font-weight: bold;
         }
 
-        /* KONTAK */
+        /* =========================
+           KONTAK
+        ========================== */
 
         .contact-section {
             padding: 50px 8%;
+
             background: #dbeafe;
+
             text-align: center;
         }
 
         .contact-box {
             max-width: 650px;
+
             margin: auto;
+
             padding: 35px;
+
             background: white;
+
             border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
+
+            box-shadow:
+                0 8px 25px rgba(
+                    0,
+                    0,
+                    0,
+                    0.10
+                );
         }
 
         .contact-icon {
             font-size: 45px;
+
             margin-bottom: 10px;
         }
 
         .contact-box h2 {
             color: #2563eb;
+
             margin-bottom: 10px;
         }
 
         .contact-box p {
             color: #555;
+
             line-height: 1.6;
         }
 
         .contact-box h3 {
             color: #222;
+
             font-size: 24px;
+
             margin-top: 20px;
+
             margin-bottom: 5px;
         }
 
         .contact-number {
             font-weight: bold;
+
             margin-bottom: 25px;
         }
 
         .contact-button {
             display: inline-block;
+
             padding: 13px 24px;
+
             background: #22c55e;
+
             color: white;
+
             text-decoration: none;
+
             border-radius: 8px;
+
             font-weight: bold;
+
             transition: 0.3s;
         }
 
         .contact-button:hover {
             background: #16a34a;
+
             transform: translateY(-2px);
         }
 
-        /* FOOTER */
+        /* =========================
+           FOOTER
+        ========================== */
 
         footer {
             background: #111827;
+
             color: white;
+
             text-align: center;
+
             padding: 20px;
+
             margin-top: 20px;
         }
 
-        /* MOBILE */
+        /* =========================
+           MOBILE
+        ========================== */
 
         @media (max-width: 768px) {
 
@@ -365,17 +581,39 @@ $kursus = [
                 padding: 35px 6%;
             }
 
+            .week6-section {
+                padding: 35px 6%;
+            }
+
+            .week6-box {
+                padding: 25px 20px;
+            }
+
+            .week6-box h2 {
+                font-size: 24px;
+            }
+
+            .week6-buttons {
+                grid-template-columns: 1fr;
+            }
+
             .contact-section {
                 padding: 40px 6%;
             }
 
             .menu-button {
                 width: 100%;
+
                 max-width: 350px;
+            }
+
+            .week6-button {
+                width: 100%;
             }
 
             .contact-button {
                 width: 100%;
+
                 max-width: 350px;
             }
 
@@ -387,7 +625,10 @@ $kursus = [
 
 <body>
 
-<!-- HEADER -->
+
+<!-- =========================
+     HEADER
+========================== -->
 
 <header>
 
@@ -396,7 +637,9 @@ $kursus = [
 </header>
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================== -->
 
 <section class="hero">
 
@@ -431,7 +674,9 @@ $kursus = [
 </section>
 
 
-<!-- MENU FITUR -->
+<!-- =========================
+     MENU FITUR
+========================== -->
 
 <section class="menu-section">
 
@@ -443,44 +688,97 @@ $kursus = [
 
     <div class="menu-buttons">
 
-    <a
-        href="fee-calculator.php"
-        class="menu-button"
-    >
-        🧮 Kalkulator Biaya
-    </a>
+        <a
+            href="fee-calculator.php"
+            class="menu-button"
+        >
+            🧮 Kalkulator Biaya
+        </a>
 
-    <a
-        href="server-time.php"
-        class="menu-button"
-    >
-        🖥️ Server Time
-    </a>
+        <a
+            href="server-time.php"
+            class="menu-button"
+        >
+            🖥️ Server Time
+        </a>
 
-    <a
-        href="test-functions.php"
-        class="menu-button"
-    >
-        🔧 Fungsi PHP
-    </a>
+        <a
+            href="test-functions.php"
+            class="menu-button"
+        >
+            🔧 Fungsi PHP
+        </a>
 
-    <a
-        href="registration.php"
-        class="menu-button"
-    >
-        📝 Registrasi Kursus
-    </a>
+        <a
+            href="registration.php"
+            class="menu-button"
+        >
+            📝 Registrasi Kursus
+        </a>
 
-</div>
+    </div>
 
 </section>
 
 
-<!-- VIDEO -->
+<!-- =========================
+     BRANCHING, LOOPING,
+     DAN FORM LANJUTAN
+========================== -->
+
+<section class="week6-section">
+
+    <div class="week6-box">
+
+        <h2>
+            Branching, Looping, dan Form Lanjutan
+        </h2>
+
+        <p>
+            Akses berbagai fitur berikut untuk mencoba
+            form pendaftaran, melihat history dummy,
+            dan mempelajari perulangan PHP.
+        </p>
+
+        <div class="week6-buttons">
+
+            <a
+                href="register.php"
+                class="week6-button"
+            >
+                📝 Pendaftaran
+            </a>
+
+            <a
+                href="history.php"
+                class="week6-button"
+            >
+                📋 History
+            </a>
+
+            <a
+                href="loop-lab.php"
+                class="week6-button"
+            >
+                🔄 Loop Lab
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     VIDEO
+========================== -->
 
 <section class="media-section">
 
-    <h2>Video Pembelajaran randi-kursusku</h2>
+    <h2>
+        Video Pembelajaran randi-kursusku
+    </h2>
 
     <p>
         Simak video berikut untuk mempelajari materi lebih dalam.
@@ -488,14 +786,18 @@ $kursus = [
 
     <div class="video-container">
 
-        <video controls preload="metadata">
+        <video
+            controls
+            preload="metadata"
+        >
 
             <source
                 src="assets/video/intro-kursus.mp4"
                 type="video/mp4"
             >
 
-            Browser Anda tidak mendukung pemutar video.
+            Browser Anda tidak mendukung
+            pemutar video.
 
         </video>
 
@@ -504,11 +806,15 @@ $kursus = [
 </section>
 
 
-<!-- KATALOG -->
+<!-- =========================
+     KATALOG KURSUS
+========================== -->
 
 <main class="container">
 
-    <h2>Katalog Kursus</h2>
+    <h2>
+        Katalog Kursus
+    </h2>
 
     <div class="grid">
 
@@ -551,7 +857,9 @@ $kursus = [
 </main>
 
 
-<!-- KONTAK -->
+<!-- =========================
+     KONTAK
+========================== -->
 
 <section class="contact-section">
 
@@ -591,14 +899,18 @@ $kursus = [
 </section>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================== -->
 
 <footer>
 
     &copy; <?= date("Y") ?>
+
     <?= $namaWebsite ?>
 
 </footer>
+
 
 </body>
 

@@ -1,22 +1,32 @@
 <?php
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    header('Location: registration.php');
+    exit;
+}
 
-$name = trim($_GET['name'] ?? '');
+$name = trim($_POST['name'] ?? '');
 
-$email = trim($_GET['email'] ?? '');
+$email = trim($_POST['email'] ?? '');
 
-$phone = trim($_GET['phone'] ?? '');
+$phone = trim($_POST['phone'] ?? '');
 
-$studyProgram = trim($_GET['study_program'] ?? '');
+$studyProgram = trim($_POST['study_program'] ?? '');
 
-$course = $_GET['course'] ?? '';
+$course = $_POST['course'] ?? '';
 
-$participantType = $_GET['participant_type'] ?? '';
+$participantType = $_POST['participant_type'] ?? '';
 
-$interests = $_GET['interests'] ?? [];
+$interests = $_POST['interests'] ?? [];
 
-$note = trim($_GET['note'] ?? '');
+$note = trim($_POST['note'] ?? '');
 
-$source = $_GET['source'] ?? '';
+$source = $_POST['source'] ?? '';
+
+
+if (!is_array($interests)) {
+    $interests = [];
+}
+
 
 $interestText = implode(', ', $interests);
 
@@ -31,7 +41,6 @@ function e($value): string
 }
 
 ?>
-
 
 <!doctype html>
 
@@ -59,7 +68,6 @@ function e($value): string
 
 
 <body>
-
 
 <header class="site-header">
 
@@ -97,51 +105,43 @@ function e($value): string
 <main class="container result-page">
 
 
+    <!-- Pesan berhasil -->
+
     <section class="alert-success">
 
         <div class="success-icon">
             ✓
         </div>
 
-
         <h1>
             Pendaftaran Berhasil!
         </h1>
 
-
         <p>
-            Data pendaftaran kamu sudah diterima untuk diproses.
+            Data pendaftaran Anda telah berhasil diterima.
         </p>
 
     </section>
 
 
+    <!-- Ringkasan -->
 
     <section class="summary-card">
 
-
-        <div class="summary-header">
-
-            <h2>
-                Ringkasan Data Pendaftaran
-            </h2>
-
-
-            <p>
-                Silakan periksa kembali data yang telah dikirim.
-            </p>
-
-        </div>
-
+        <h2>
+            Ringkasan Pendaftaran
+        </h2>
 
 
         <dl class="summary-list">
 
 
+            <!-- Nama -->
+
             <div class="summary-item">
 
                 <dt>
-                    Nama
+                    Nama Lengkap
                 </dt>
 
                 <dd>
@@ -151,6 +151,7 @@ function e($value): string
             </div>
 
 
+            <!-- Email -->
 
             <div class="summary-item">
 
@@ -165,6 +166,7 @@ function e($value): string
             </div>
 
 
+            <!-- Nomor HP -->
 
             <div class="summary-item">
 
@@ -179,6 +181,7 @@ function e($value): string
             </div>
 
 
+            <!-- Program Studi -->
 
             <div class="summary-item">
 
@@ -193,6 +196,7 @@ function e($value): string
             </div>
 
 
+            <!-- Kursus -->
 
             <div class="summary-item">
 
@@ -207,6 +211,7 @@ function e($value): string
             </div>
 
 
+            <!-- Jenis Peserta -->
 
             <div class="summary-item">
 
@@ -221,6 +226,7 @@ function e($value): string
             </div>
 
 
+            <!-- Minat -->
 
             <div class="summary-item">
 
@@ -229,12 +235,13 @@ function e($value): string
                 </dt>
 
                 <dd>
-                    <?= e($interestText ?: 'Tidak ada') ?>
+                    <?= e($interestText ?: '-') ?>
                 </dd>
 
             </div>
 
 
+            <!-- Catatan -->
 
             <div class="summary-item">
 
@@ -243,17 +250,18 @@ function e($value): string
                 </dt>
 
                 <dd>
-                    <?= e($note ?: 'Tidak ada') ?>
+                    <?= e($note ?: '-') ?>
                 </dd>
 
             </div>
 
 
+            <!-- Source -->
 
             <div class="summary-item">
 
                 <dt>
-                    Sumber
+                    Source
                 </dt>
 
                 <dd>
@@ -265,42 +273,44 @@ function e($value): string
 
         </dl>
 
-
-
-        <div class="result-actions">
-
-
-            <a
-                class="btn-link"
-                href="registration.php"
-            >
-                ← Kembali ke Form
-            </a>
-
-
-            <a
-                class="btn-secondary"
-                href="index.php"
-            >
-                🏠 Ke Beranda
-            </a>
-
-
-        </div>
-
-
     </section>
+
+
+    <!-- Tombol -->
+
+    <div class="result-actions">
+
+        <a
+            href="registration.php"
+            class="btn-primary"
+        >
+            Daftar Lagi
+        </a>
+
+
+        <a
+            href="index.php"
+            class="btn-secondary"
+        >
+            Kembali ke Beranda
+        </a>
+
+    </div>
 
 
 </main>
 
 
-
 <footer class="site-footer">
 
-    <p>
-        © 2026 KursusKu - Sistem Pendaftaran Kursus
-    </p>
+    <div class="container">
+
+        <p>
+            &copy; <?= date('Y') ?> KursusKu.
+            Semua hak dilindungi.
+        </p>
+
+    </div>
 
 </footer>
 

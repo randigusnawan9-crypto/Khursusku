@@ -1,23 +1,19 @@
 <!doctype html>
 <html lang="id">
+
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Daftar Kursus - KursusKu</title>
-
-    <link rel="stylesheet" href="assets/CSS/style.css">
-</head>
-       <meta charset="utf-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Daftar Kursus - KursusKu</title>
 
     <link rel="stylesheet" href="assets/css/style.css">
-    
+</head>
+
 <body>
 
 <header class="site-header">
+
     <div class="container nav-wrap">
 
         <a class="brand" href="index.php">
@@ -25,39 +21,70 @@
         </a>
 
         <nav aria-label="Navigasi utama">
-            <a href="index.php">Beranda</a>
-            <a href="index.php#katalog">Katalog</a>
-            <a href="registration.php">Daftar</a>
+
+            <a href="index.php">
+                Beranda
+            </a>
+
+            <a href="index.php#katalog">
+                Katalog
+            </a>
+
+            <a href="registration.php">
+                Daftar
+            </a>
+
         </nav>
 
     </div>
+
 </header>
+
 
 <main class="container">
 
     <section class="page-intro">
-        <p class="eyebrow">Pendaftaran Kursus</p>
 
-        <h1>Mulai belajar bersama KursusKu</h1>
+        <p class="eyebrow">
+            Pendaftaran Kursus
+        </p>
+
+        <h1>
+            Mulai belajar bersama KursusKu
+        </h1>
 
         <p>
-            Gunakan data latihan. Field bertanda wajib harus diisi.
+            Gunakan data latihan.
+            Field bertanda wajib harus diisi.
         </p>
+
     </section>
+
 
     <section class="form-card">
 
-        <form action="process-registration.php" method="POST"
-              class="registration-form">
+        <form
+            action="process-registration.php"
+            method="POST"
+            class="registration-form"
+        >
 
-            <!-- Hidden field -->
-            <input type="hidden" name="source" value="week-05">
+            <!-- Hidden -->
+            <input
+                type="hidden"
+                name="source"
+                value="week-05"
+            >
 
-            <!-- Nama dan Email -->
+
             <div class="form-grid">
 
+                <!-- Nama -->
                 <div class="form-group">
-                    <label for="name">Nama Lengkap</label>
+
+                    <label for="name">
+                        Nama Lengkap
+                    </label>
 
                     <input
                         id="name"
@@ -68,10 +95,16 @@
                         autocomplete="name"
                         required
                     >
+
                 </div>
 
+
+                <!-- Email -->
                 <div class="form-group">
-                    <label for="email">Email</label>
+
+                    <label for="email">
+                        Email
+                    </label>
 
                     <input
                         id="email"
@@ -81,11 +114,16 @@
                         autocomplete="email"
                         required
                     >
+
                 </div>
+
 
                 <!-- Nomor HP -->
                 <div class="form-group">
-                    <label for="phone">Nomor HP</label>
+
+                    <label for="phone">
+                        Nomor HP
+                    </label>
 
                     <input
                         id="phone"
@@ -96,10 +134,13 @@
                         placeholder="Contoh: 081234567890"
                         required
                     >
+
                 </div>
+
 
                 <!-- Program Studi -->
                 <div class="form-group">
+
                     <label for="study_program">
                         Program Studi
                     </label>
@@ -111,18 +152,24 @@
                         maxlength="100"
                         required
                     >
+
                 </div>
 
             </div>
 
-            <!-- Pilihan Kursus -->
+
+            <!-- Kursus -->
             <div class="form-group">
 
                 <label for="course">
                     Kursus yang Dipilih
                 </label>
 
-                <select id="course" name="course" required>
+                <select
+                    id="course"
+                    name="course"
+                    required
+                >
 
                     <option value="">
                         -- Pilih kursus --
@@ -144,65 +191,90 @@
 
             </div>
 
+
             <!-- Jenis Peserta -->
             <fieldset class="form-group">
 
-                <legend>Jenis Peserta</legend>
+                <legend>
+                    Jenis Peserta
+                </legend>
 
                 <label class="choice">
+
                     <input
                         type="radio"
                         name="participant_type"
                         value="mahasiswa"
                         required
                     >
+
                     Mahasiswa
+
                 </label>
 
+
                 <label class="choice">
+
                     <input
                         type="radio"
                         name="participant_type"
                         value="umum"
                     >
+
                     Umum
+
                 </label>
 
             </fieldset>
 
+
             <!-- Minat -->
             <fieldset class="form-group">
 
-                <legend>Minat Tambahan</legend>
+                <legend>
+                    Minat Tambahan
+                </legend>
 
                 <label class="choice">
+
                     <input
                         type="checkbox"
                         name="interests[]"
                         value="ui-ux"
                     >
+
                     UI/UX
+
                 </label>
 
+
                 <label class="choice">
+
                     <input
                         type="checkbox"
                         name="interests[]"
                         value="database"
                     >
+
                     Database
+
                 </label>
 
+
                 <label class="choice">
+
                     <input
                         type="checkbox"
                         name="interests[]"
                         value="backend"
                     >
+
                     Backend
+
                 </label>
 
             </fieldset>
+
 
             <!-- Catatan -->
             <div class="form-group">
@@ -225,7 +297,8 @@
 
             </div>
 
-            <!-- Tombol -->
+
+            <!-- Submit -->
             <button
                 class="btn-primary"
                 type="submit"
@@ -240,4 +313,5 @@
 </main>
 
 </body>
+
 </html>
