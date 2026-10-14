@@ -1,14 +1,32 @@
 <?php
 require_once 'data.php';
 
+// Pastikan halaman diakses menggunakan metode POST
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    header('Location: register.php');
+    exit;
+}
+
+// Ambil dan validasi data wajib
+$name = trim($_POST['name'] ?? '');
+$email = trim($_POST['email'] ?? '');
+$course = $_POST['course'] ?? '';
+
+if (
+    $name === '' ||
+    !filter_var($email, FILTER_VALIDATE_EMAIL) ||
+    $course === ''
+) {
+    http_response_code(422);
+    exit('Data pendaftaran tidak valid. Periksa nama, email, dan kursus.');
+}
+
 function e($value): string
 {
     return htmlspecialchars((string) $value, ENT_QUOTES, 'UTF-8');
 }
 
-$name = trim($_POST['name'] ?? '');
-$email = trim($_POST['email'] ?? '');
-$course = $_POST['course'] ?? '';
+
 $participantType = $_POST['participant_type'] ?? '';
 $interests = $_POST['interests'] ?? [];
 $method = $_POST['method'] ?? '';

@@ -2,12 +2,29 @@
 
 require_once "helpers.php";
 
+// Informasi kursus
 $namaKursus = "Dasar Pemrograman PHP";
-$hargaAwal = 150000;
-$persenDiskon = 10;
 
-$hargaAkhir = hitungDiskon($hargaAwal, $persenDiskon);
-$jumlahDiskon = $hargaAwal - $hargaAkhir;
+// Data perhitungan biaya
+$hargaAwal = 350000;
+$jumlahPeserta = 2;
+$persenDiskon = 10;
+$biayaAdmin = 25000;
+
+// Hitung subtotal sebelum diskon
+$subtotal = $hargaAwal * $jumlahPeserta;
+
+// Hitung harga setelah diskon
+$hargaSetelahDiskon = hitungDiskon(
+    $subtotal,
+    $persenDiskon
+);
+
+// Hitung jumlah diskon
+$jumlahDiskon = $subtotal - $hargaSetelahDiskon;
+
+// Hitung total akhir setelah biaya admin
+$totalAkhir = $hargaSetelahDiskon + $biayaAdmin;
 
 ?>
 
@@ -18,7 +35,10 @@ $jumlahDiskon = $hargaAwal - $hargaAkhir;
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Kalkulator Biaya - randi-kursusku</title>
 
@@ -70,9 +90,15 @@ $jumlahDiskon = $hargaAwal - $hargaAkhir;
             margin-bottom: 25px;
         }
 
+        .kursus p {
+            margin-bottom: 0;
+        }
+
         .baris {
             display: flex;
             justify-content: space-between;
+            align-items: center;
+            gap: 15px;
             padding: 12px 0;
             border-bottom: 1px solid #eee;
         }
@@ -83,6 +109,7 @@ $jumlahDiskon = $hargaAwal - $hargaAkhir;
 
         .nilai {
             font-weight: bold;
+            text-align: right;
         }
 
         .diskon {
@@ -122,85 +149,132 @@ $jumlahDiskon = $hargaAwal - $hargaAkhir;
             background: #1d4ed8;
         }
 
+        @media (max-width: 480px) {
+            .container {
+                margin: 20px auto;
+                padding: 15px;
+            }
+
+            .card {
+                padding: 22px;
+            }
+
+            .total h3 {
+                font-size: 26px;
+            }
+        }
+
     </style>
 
 </head>
 
 <body>
 
-<header>
+    <header>
+        <h1>randi-kursusku</h1>
+    </header>
 
-    <h1>randi-kursusku</h1>
+    <div class="container">
 
-</header>
+        <div class="card">
 
-<div class="container">
+            <h2>Kalkulator Biaya Kursus</h2>
 
-    <div class="card">
+            <div class="kursus">
 
-        <h2>Kalkulator Biaya Kursus</h2>
+                <strong>
+                    <?= htmlspecialchars(
+                        $namaKursus,
+                        ENT_QUOTES,
+                        'UTF-8'
+                    ) ?>
+                </strong>
 
-        <div class="kursus">
+                <p>
+                    Jumlah Peserta: <?= $jumlahPeserta ?>
+                </p>
 
-            <strong><?= $namaKursus ?></strong>
+            </div>
+
+            <div class="baris">
+
+                <span class="label">
+                    Harga per Peserta
+                </span>
+
+                <span class="nilai">
+                    <?= formatRupiah($hargaAwal) ?>
+                </span>
+
+            </div>
+
+            <div class="baris">
+
+                <span class="label">
+                    Subtotal
+                </span>
+
+                <span class="nilai">
+                    <?= formatRupiah($subtotal) ?>
+                </span>
+
+            </div>
+
+            <div class="baris">
+
+                <span class="label">
+                    Diskon (<?= $persenDiskon ?>%)
+                </span>
+
+                <span class="nilai diskon">
+                    - <?= formatRupiah($jumlahDiskon) ?>
+                </span>
+
+            </div>
+
+            <div class="baris">
+
+                <span class="label">
+                    Harga Setelah Diskon
+                </span>
+
+                <span class="nilai">
+                    <?= formatRupiah($hargaSetelahDiskon) ?>
+                </span>
+
+            </div>
+
+            <div class="baris">
+
+                <span class="label">
+                    Biaya Admin
+                </span>
+
+                <span class="nilai">
+                    <?= formatRupiah($biayaAdmin) ?>
+                </span>
+
+            </div>
+
+            <div class="total">
+
+                <p>
+                    Total Akhir
+                </p>
+
+                <h3>
+                    <?= formatRupiah($totalAkhir) ?>
+                </h3>
+
+            </div>
+
+            <a href="index.php" class="kembali">
+                ← Kembali ke Katalog
+            </a>
 
         </div>
-
-        <div class="baris">
-
-            <span class="label">
-                Harga Awal
-            </span>
-
-            <span class="nilai">
-                <?= formatRupiah($hargaAwal) ?>
-            </span>
-
-        </div>
-
-        <div class="baris">
-
-            <span class="label">
-                Diskon
-            </span>
-
-            <span class="nilai diskon">
-                <?= $persenDiskon ?>%
-            </span>
-
-        </div>
-
-        <div class="baris">
-
-            <span class="label">
-                Jumlah Diskon
-            </span>
-
-            <span class="nilai diskon">
-                - <?= formatRupiah($jumlahDiskon) ?>
-            </span>
-
-        </div>
-
-        <div class="total">
-
-            <p>
-                Harga Setelah Diskon
-            </p>
-
-            <h3>
-                <?= formatRupiah($hargaAkhir) ?>
-            </h3>
-
-        </div>
-
-        <a href="index.php" class="kembali">
-            ← Kembali ke Katalog
-        </a>
 
     </div>
-
-</div>
 
 </body>
 

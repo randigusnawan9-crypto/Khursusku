@@ -192,7 +192,7 @@ $percentage = $totalTest > 0
 
         :root {
 
-            --navy: #0f172a;
+            --navy: #2563eb;
 
             --navy-soft: #17233d;
 
@@ -1171,7 +1171,7 @@ $percentage = $totalTest > 0
                 href="index.php"
                 class="brand">
 
-                Kursus<span>Ku</span>
+                KursusKu
 
             </a>
 

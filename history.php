@@ -1,6 +1,6 @@
 <?php
 
-$history_data = [
+$registrations = [
     [
         "nama" => "Alya Putri",
         "kursus" => "Web Dasar",
@@ -498,7 +498,7 @@ function e($value): string
                 </h2>
 
                 <span class="count">
-                    <?= count($history_data); ?> Data
+                    <?= count($registrations); ?> Data
                 </span>
 
             </div>
@@ -519,7 +519,7 @@ function e($value): string
 
                     <tbody>
 
-                        <?php foreach ($history_data as $index => $row): ?>
+                        <?php foreach ($registrations as $index => $row): ?>
 
                             <tr>
 

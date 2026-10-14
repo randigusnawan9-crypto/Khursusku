@@ -7,37 +7,50 @@ $kursus = [
         "nama" => "Dasar Pemrograman PHP",
         "kategori" => "Pemrograman",
         "harga" => 150000,
-        "status" => "Tersedia"
+        "quota" => 30,
+        "registered" => 18
     ],
     [
         "nama" => "HTML dan CSS",
         "kategori" => "Web Design",
         "harga" => 100000,
-        "status" => "Tersedia"
+        "quota" => 30,
+        "registered" => 20
     ],
     [
         "nama" => "JavaScript Dasar",
         "kategori" => "Pemrograman",
         "harga" => 175000,
-        "status" => "Penuh"
+        "quota" => 25,
+        "registered" => 25
     ],
     [
         "nama" => "Database MySQL",
         "kategori" => "Database",
         "harga" => 200000,
-        "status" => "Tersedia"
+        "quota" => 30,
+        "registered" => 15
     ],
     [
         "nama" => "Desain UI/UX",
         "kategori" => "Desain",
         "harga" => 125000,
-        "status" => "Tersedia"
+        "quota" => 25,
+        "registered" => 24
     ],
     [
         "nama" => "Git dan GitHub",
         "kategori" => "Tools",
         "harga" => 100000,
-        "status" => "Penuh"
+        "quota" => 20,
+        "registered" => 20
+    ],
+    [
+        "nama" => "Laravel Fundamental",
+        "kategori" => "Pemrograman",
+        "harga" => 500000,
+        "quota" => 25,
+        "registered" => 25
     ]
 ];
 
@@ -701,7 +714,12 @@ $kursus = [
         >
             🖥️ Server Time
         </a>
-
+        <a
+            href="#katalog"
+            class="menu-button"
+        >
+            📚 Katalog Kursus
+        </a>
         <a
             href="test-functions.php"
             class="menu-button"
@@ -810,7 +828,7 @@ $kursus = [
      KATALOG KURSUS
 ========================== -->
 
-<main class="container">
+<main class="container" id="katalog">
 
     <h2>
         Katalog Kursus
@@ -818,39 +836,66 @@ $kursus = [
 
     <div class="grid">
 
-        <?php foreach ($kursus as $item): ?>
+        
+<?php foreach ($kursus as $item): ?>
 
-            <div class="card">
+    <?php
+    // Menghitung sisa kursi
+    $sisaKursi = max(
+        0,
+        $item["quota"] - $item["registered"]
+    );
 
-                <span
-                    class="status <?= strtolower($item["status"]) ?>"
-                >
-                    <?= $item["status"] ?>
-                </span>
+    // Menentukan status berdasarkan kuota
+    $isFull = $item["registered"] >= $item["quota"];
 
-                <h3>
-                    <?= $item["nama"] ?>
-                </h3>
+    $status = $isFull ? "Penuh" : "Tersedia";
+    $statusClass = $isFull ? "penuh" : "tersedia";
+    ?>
 
-                <p>
-                    <strong>Kategori:</strong>
-                    <?= $item["kategori"] ?>
-                </p>
+    <div class="card">
 
-                <p class="harga">
+        <span class="status <?= $statusClass ?>">
+            <?= $status ?>
+        </span>
 
-                    Rp<?= number_format(
-                        $item["harga"],
-                        0,
-                        ",",
-                        "."
-                    ) ?>
+        <h3>
+            <?= $item["nama"] ?>
+        </h3>
 
-                </p>
+        <p>
+            <strong>Kategori:</strong>
+            <?= $item["kategori"] ?>
+        </p>
 
-            </div>
+        <p class="harga">
+            Rp<?= number_format(
+                $item["harga"],
+                0,
+                ",",
+                "."
+            ) ?>
+        </p>
 
-        <?php endforeach; ?>
+        <p>
+            <strong>Kuota:</strong>
+            <?= $item["quota"] ?> peserta
+        </p>
+
+        <p>
+            <strong>Terdaftar:</strong>
+            <?= $item["registered"] ?> peserta
+        </p>
+
+        <p>
+            <strong>Sisa kursi:</strong>
+            <?= $sisaKursi ?> peserta
+        </p>
+
+    </div>
+
+<?php endforeach; ?>
+
 
     </div>
 

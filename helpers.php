@@ -1,33 +1,79 @@
 <?php
+// helpers.php
 
-function formatRupiah($angka)
+function rupiah(int $amount): string
 {
-    return "Rp" . number_format($angka, 0, ",", ".");
+    return 'Rp ' . number_format($amount, 0, ',', '.');
 }
 
-function statusKursus($status)
+function statusKursus(int $quota, int $registered): string
 {
-    if ($status === "Tersedia") {
-        return "Kursus masih dapat diikuti";
+    return $registered >= $quota ? 'Penuh' : 'Tersedia';
+}
+
+function sisaKursi(int $quota, int $registered): int
+{
+    return max(0, $quota - $registered);
+}
+
+function formatTanggal(string $date): string
+{
+    $value = new DateTimeImmutable($date);
+    return $value->format('F j, Y');
+}
+
+function e($value): string
+{
+    return htmlspecialchars((string)$value, ENT_QUOTES, 'UTF-8');
+}
+
+function formatRupiah(int $amount): string
+{
+    return rupiah($amount);
+}
+
+// Helper pemetaan mode belajar (Soal No. 20)
+function getLearningModeLabel(string $mode): string
+{
+    $modes = [
+        'offline' => 'Tatap muka',
+        'online'  => 'Online',
+        'hybrid'  => 'Hybrid',
+    ];
+
+    return $modes[$mode] ?? $mode;
+}
+
+function findCourse(array $courses, string $code): ?array
+{
+    foreach ($courses as $course) {
+        if ($course['code'] === $code) {
+            return $course;
+        }
+    }
+    return null;
+}
+
+// Helper perhitungan diskon
+function hitungDiskon(string $participantType, int $subtotal): array
+{
+    $discountPercent = 0;
+    
+    // Branching Diskon: mahasiswa 20%, guru 15%, umum 0%
+    if ($participantType === 'mahasiswa') {
+        $discountPercent = 20;
+    } elseif ($participantType === 'guru') {
+        $discountPercent = 15;
+    } else {
+        $discountPercent = 0;
     }
 
-    if ($status === "Penuh") {
-        return "Kursus sudah penuh";
-    }
+    $discountAmount = intdiv($subtotal * $discountPercent, 100);
+    $total = $subtotal - $discountAmount;
 
-    return "Status tidak diketahui";
-}
-
-function hitungDiskon($harga, $persen)
-{
-    $diskon = $harga * ($persen / 100);
-
-    return $harga - $diskon;
-}
-
-function tambahKursus($daftarKursus, $kursusBaru)
-{
-    $daftarKursus[] = $kursusBaru;
-
-    return $daftarKursus;
+    return [
+        'percent' => $discountPercent,
+        'amount' => $discountAmount,
+        'total' => $total
+    ];
 }
